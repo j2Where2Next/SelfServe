@@ -16,8 +16,12 @@
         <main id="app">
             
             <section class="items">
-                <h4>Pick Your Items</h4>
-                <div v-for="product in products" class="product">
+                <h4>Pick Your Item(s)</h4>
+                <div 
+                    v-for="product in products" 
+                    class="product"
+                    @click="product.active = !product.active"
+                    :class="product.active ? 'selected' : ''" >
                     <div class="photo">
                         <img :src="product.photo">
                     </div>
